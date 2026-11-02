@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Terminal: Gentle Library | The Gentle & La Brava Archives</title>
+    
+    <!-- Custom Narrative & Dandy-Hacker Stylesheet -->
+    <link rel="stylesheet" href="gentlestyle.css">
+    
+    <!-- Google Fonts for Cinzel, Cormorant Garamond, and Share Tech Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 💖 THE QUIRK THRESHOLD PORTAL (La Brava's Purple-Pink to Dark Shaded Spirals) -->
+    <div id="threshold-portal" class="threshold-portal" style="position: fixed; inset: 0; width: 100vw; height: 100vh; background: #060205; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 99999; cursor: pointer; overflow: hidden; text-align: center;">
+        
+        <!-- Full-Screen SVG Container with Accurate Purple-to-Dark Shading -->
+        <svg style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+          
+          <defs>
+            <!-- Single Eye Definition (Left Eye) -->
+            <g id="la-brava-eye">
+              <!-- 1. Thick Sharp Black Eyeliner Wing (#1C0D15) -->
+              <path d="M15 110 C 95 10, 265 0, 435 95 C 365 210, 150 215, 15 110 Z" fill="#1C0D15" />
+              
+              <!-- 2. Pristine White Sclera / Eye Whites (#FFFFFF)[cite: 12] -->
+              <path d="M35 105 C 115 30, 255 25, 415 98 C 345 190, 160 195, 35 105 Z" fill="#FFFFFF" />
+
+              <!-- 3. Almost Black Outer Ring for the Eye (#1C0D15)[cite: 12] -->
+              <circle cx="225" cy="95" r="55" fill="none" stroke="#1C0D15" stroke-width="12" />
+
+              <!-- 4. Outer Circular Spirals (Dark Plum transitioning outward: #351B29)[cite: 12] -->
+              <circle cx="225" cy="95" r="44" fill="none" stroke="#351B29" stroke-width="8" />
+              <circle cx="225" cy="95" r="36" fill="none" stroke="#351B29" stroke-width="7" />
+
+              <!-- 5. Middle Circular Spirals (Mid-Tone Pink: #D67893)[cite: 12] -->
+              <circle cx="225" cy="95" r="28" fill="none" stroke="#D67893" stroke-width="6" />
+              <circle cx="225" cy="95" r="22" fill="none" stroke="#D67893" stroke-width="5" />
+
+              <!-- 6. Innermost Core: Exactly 2 Heart Rings (Light Pink #F9D3DD & Mid Pink #D67893)[cite: 12] -->
+              <path d="M225 112 C 200 83, 200 80, 216 80 C 219 80, 222 85, 225 91 C 228 85, 231 80, 234 80 C 250 80, 250 83, 225 112 Z" 
+                    fill="none" stroke="#F9D3DD" stroke-width="4" stroke-linejoin="round" />
+              <path d="M225 104 C 205 85, 205 83, 218 83 C 221 83, 223 87, 225 92 C 227 87, 229 83, 232 83 C 245 83, 245 85, 225 104 Z" 
+                    fill="none" stroke="#D67893" stroke-width="2.5" stroke-linejoin="round" />
+            </g>
+          </defs>
+
+          <!-- Left Eye -->
+          <use href="#la-brava-eye" x="70" y="210" />
+
+          <!-- Right Eye (Mirrored Horizontally) -->
+          <use href="#la-brava-eye" x="930" y="210" transform="scale(-1, 1) translate(-1000, 0)" />
+
+        </svg>
+
+        <!-- Centered Text Immersion -->
+        <div style="position: relative; z-index: 10; padding: 2rem; max-width: 800px; margin-top: 20rem;">
+            <span class="portal-quote" style="font-family: 'Cinzel', serif; font-size: 2.2rem; color: #F9D3DD; display: block; margin-bottom: 1rem; text-shadow: 0 0 20px rgba(214, 120, 147, 0.8);">"BOOSTING THE LIBRARY WITH LOVE!"</span>
+            <span class="portal-subtext" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: #D67893; letter-spacing: 1.5px;">[ Click anywhere or press Enter to shatter the portal and enter the archive ]</span>
+        </div>
+    </div>
+
+    <!-- 🌹 Terminal Header & Title Bar -->
+    <header>
+        <div class="book-shelf-tag" style="margin-bottom: 0.5rem; color: #D67893;">The Gentle & La Brava Archives</div>
+        <h1>GENTLE CRIMINAL X LA BRAVA LIBRARY</h1>
+        <p>Personalised library to elevate Gentle with a cup of imperial tea.</p>
+        
+        <div class="header-actions">
+            <button id="open-scribe-btn">Document a New Feat</button>
+            <button id="quirk-boost-btn" class="status-btn" style="padding: 0.85rem 1.8rem; background: rgba(214, 120, 147, 0.2); border: 1px solid #D67893; color: #F9D3DD; border-radius: 25px; font-family: 'Cinzel', serif; font-weight: 700; cursor: pointer;">Ready to boost! ❤️</button>
+            <button id="export-library-btn" class="status-btn" style="padding: 0.8rem 1.4rem;">📜 Export Archives (.json)</button>
+        </div>
+    </header>
+
+    <!-- 📚 Dynamic Book Grid Container -->
+    <main>
+        <div id="library" class="book-grid">
+            <!-- JavaScript dynamically injects all seed collection cards here -->
+        </div>
+    </main>
+
+    <!-- 📜 Archive Inscription Modal (Dramatic Scroll Form) -->
+    <div id="scribe-modal" class="scribe-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(10, 3, 8, 0.85); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(8px);">
+        <div class="modal-content" style="background: linear-gradient(135deg, #1c0c16, #0d0b10); border: 2px solid #D67893; padding: 2.5rem; border-radius: 12px; width: 90%; max-width: 600px; box-shadow: 0 15px 50px rgba(214, 120, 147, 0.4); color: #f7f1e3; position: relative;">
+            <h2 style="font-family: 'Cinzel', serif; color: #F9D3DD; margin-bottom: 1.5rem; font-size: 1.8rem; text-align: center;">Inscribe a New Volume or Deed</h2>
+            
+            <form id="add-volume-form" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                <div>
+                    <label for="book-title" style="display: block; font-family: 'Cinzel', serif; font-size: 0.9rem; margin-bottom: 0.4rem; color: #F9D3DD;">Title / Deed Name:</label>
+                    <input type="text" id="book-title" required placeholder="e.g., The Great Cake Heist" style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(214,120,147,0.4); border-radius: 6px; color: #f7f1e3; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;">
+                </div>
+                
+                <div>
+                    <label for="book-author" style="display: block; font-family: 'Cinzel', serif; font-size: 0.9rem; margin-bottom: 0.4rem; color: #F9D3DD;">Author / Architect:</label>
+                    <input type="text" id="book-author" required placeholder="e.g., Gentle Criminal & La Brava" style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(214,120,147,0.4); border-radius: 6px; color: #f7f1e3; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;">
+                </div>
+
+                <div style="display: flex; gap: 1rem;">
+                    <div style="flex: 1;">
+                        <label for="book-pages" style="display: block; font-family: 'Cinzel', serif; font-size: 0.9rem; margin-bottom: 0.4rem; color: #F9D3DD;">Page Count:</label>
+                        <input type="number" id="book-pages" value="300" required style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(214,120,147,0.4); border-radius: 6px; color: #f7f1e3; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;">
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="book-beloved" style="display: block; font-family: 'Cinzel', serif; font-size: 0.9rem; margin-bottom: 0.4rem; color: #F9D3DD;">Beloved By:</label>
+                        <select id="book-beloved" style="width: 100%; padding: 0.8rem; background: #1c0c16; border: 1px solid rgba(214,120,147,0.4); border-radius: 6px; color: #f7f1e3; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;">
+                            <option value="Both">Both</option>
+                            <option value="Gentle">Gentle</option>
+                            <option value="La Brava">La Brava</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="book-shelf" style="display: block; font-family: 'Cinzel', serif; font-size: 0.9rem; margin-bottom: 0.4rem; color: #F9D3DD;">Library Wing / Shelf:</label>
+                    <select id="book-shelf" style="width: 100%; padding: 0.8rem; background: #1c0c16; border: 1px solid rgba(214,120,147,0.4); border-radius: 6px; color: #f7f1e3; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;">
+                        <option value="The Art of the Hidden Mastermind">The Art of the Hidden Mastermind</option>
+                        <option value="Backstage Theater & Obsession">Backstage Theater & Obsession</option>
+                        <option value="The Mad Editor's Codex">The Mad Editor's Codex</option>
+                        <option value="Surveillance & Eternal Projection">Surveillance & Eternal Projection</option>
+                        <option value="Dandy Villainy & Epistolary Strategy">Dandy Villainy & Epistolary Strategy</option>
+                        <option value="Theatrical Revenge & Grand Comebacks">Theatrical Revenge & Grand Comebacks</option>
+                        <option value="Gentlemanly Performance Art">Gentlemanly Performance Art</option>
+                        <option value="Tragic Idealism & Noble Knights">Tragic Idealism & Noble Knights</option>
+                        <option value="Secret Identities & Dramatic Disguises">Secret Identities & Dramatic Disguises</option>
+                        <option value="Origin & Criminal Romance">Origin & Criminal Romance</option>
+                        <option value="Cyberpunk & Hideout Security">Cyberpunk & Hideout Security</option>
+                        <option value="IT Guides & Autodidact Mastery">IT Guides & Autodidact Mastery</option>
+                        <option value="Cybersecurity & Digital Defense">Cybersecurity & Digital Defense</option>
+                        <option value="Seduction & The First Meeting">Seduction & The First Meeting</option>
+                        <option value="Theatrical Speeches & Grand Delivery">Theatrical Speeches & Grand Delivery</option>
+                        <option value="Teatime & Encyclopedia of Tea">Teatime & Encyclopedia of Tea</option>
+                        <option value="Gentlemanly Etiquette & Style">Gentlemanly Etiquette & Style</option>
+                        <option value="Changing the World & Legacy">Changing the World & Legacy</option>
+                        <option value="Japanese Literary Masterpieces">Japanese Literary Masterpieces</option>
+                        <option value="Shared Devotion & Tragedy">Shared Devotion & Tragedy</option>
+                    </select>
+                </div>
+
+                <div style="display: flex; gap: 1rem;">
+                    <div style="flex: 1;">
+                        <label for="book-love" style="display: block; font-family: 'Cinzel', serif; font-size: 0.9rem; margin-bottom: 0.4rem; color: #F9D3DD;">Love Level:</label>
+                        <select id="book-love" style="width: 100%; padding: 0.8rem; background: #1c0c16; border: 1px solid rgba(214,120,147,0.4); border-radius: 6px; color: #f7f1e3; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;">
+                            <option value="❤️❤️❤️❤️❤️">❤️❤️❤️❤️❤️ (5/5)</option>
+                            <option value="❤️❤️❤️❤️">❤️❤️❤️❤️ (4/5)</option>
+                            <option value="❤️❤️❤️">❤️❤️❤️ (3/5)</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="book-status" style="display: block; font-family: 'Cinzel', serif; font-size: 0.9rem; margin-bottom: 0.4rem; color: #F9D3DD;">Initial Status:</label>
+                        <select id="book-status" style="width: 100%; padding: 0.8rem; background: #1c0c16; border: 1px solid rgba(214,120,147,0.4); border-radius: 6px; color: #f7f1e3; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;">
+                            <option value="studied-tome">Gentle has studied this tome</option>
+                            <option value="awaiting-review">Awaiting Gentle’s review</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="book-marginalia" style="display: block; font-family: 'Cinzel', serif; font-size: 0.9rem; margin-bottom: 0.4rem; color: #F9D3DD;">Gentle's Marginalia Quote:</label>
+                    <input type="text" id="book-marginalia" placeholder="Dramatic quote or annotation..." style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(214,120,147,0.4); border-radius: 6px; color: #f7f1e3; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem;">
+                </div>
+
+                <div>
+                    <label for="book-notes" style="display: block; font-family: 'Cinzel', serif; font-size: 0.9rem; margin-bottom: 0.4rem; color: #F9D3DD;">La Brava's Notes:</label>
+                    <textarea id="book-notes" rows="2" placeholder="Additional commentary..." style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(214,120,147,0.4); border-radius: 6px; color: #f7f1e3; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem;"></textarea>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button type="submit" style="flex: 1; padding: 0.8rem; background: linear-gradient(135deg, #351B29, #D67893); color: white; border: 1px solid #F9D3DD; border-radius: 6px; font-family: 'Cinzel', serif; font-weight: 700; cursor: pointer;">Seal Inscription</button>
+                    <button type="button" id="close-scribe-btn" style="flex: 1; padding: 0.8rem; background: transparent; color: #f7f1e3; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; font-family: 'Cinzel', serif; cursor: pointer;">Dismiss</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Portal CSS -->
+    <style>
+        .threshold-portal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #060205;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            cursor: pointer;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            text-align: center;
+            overflow: hidden;
+        }
+        .threshold-portal.shattered {
+            opacity: 0;
+            transform: scale(1.08);
+            pointer-events: none;
+        }
+        .header-actions {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+
+    <!-- Core Object-Oriented Script Engine -->
+    <script src="gentlelibrary.js"></script>
+</body>
+</html>

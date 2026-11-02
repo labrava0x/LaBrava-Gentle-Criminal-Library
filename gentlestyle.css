@@ -1,0 +1,248 @@
+/* =================================================================
+   GENTLE CRIMINAL X LA BRAVA - THEATRICAL DANDY & HACKER CSS
+   La Brava's Raspberry Pink + Gentle's Dandy Purple + Terminal Green
+   ================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Share+Tech+Mono&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #060205;
+    background: radial-gradient(circle at top center, #150510 0%, #080205 50%, #020002 100%);
+    background-attachment: fixed;
+    color: #f7f1e3;
+    font-family: 'Cormorant Garamond', serif;
+    min-height: 100vh;
+    padding-bottom: 4rem;
+}
+
+header {
+    text-align: center;
+    padding: 3rem 1.5rem 2rem 1.5rem;
+    background: rgba(10, 3, 8, 0.95);
+    border-bottom: 2px solid #ff007f; /* La Brava's Raspberry Pink */
+    box-shadow: 0 4px 25px rgba(255, 0, 127, 0.25);
+}
+
+header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    color: #d8bfd8; /* Gentle's Dandy Purple */
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 15px rgba(177, 156, 217, 0.5);
+}
+
+header p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #ff85b3; /* Soft Raspberry Tint */
+}
+
+#open-scribe-btn {
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, #ff007f 0%, #b30059 100%);
+    color: #d8bfd8; /* Gentle's Purple Accent */
+    border: 1px solid #ff66b2;
+    padding: 0.85rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
+    transition: all 0.25s ease;
+}
+
+#open-scribe-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(255, 0, 127, 0.9), 0 0 10px #b19cd9;
+}
+
+.status-btn {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid #00ff88; /* Terminal Green */
+    color: #00ff88;
+    font-family: 'Share Tech Mono', monospace;
+    cursor: pointer;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.status-btn:hover {
+    background: rgba(0, 255, 136, 0.25);
+    box-shadow: 0 0 12px rgba(0, 255, 136, 0.5);
+}
+
+.book-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 2rem;
+}
+
+.book-card {
+    position: relative;
+    background: #0d040a;
+    border: 1px solid rgba(255, 0, 127, 0.3);
+    border-radius: 8px;
+    padding: 1.8rem;
+    box-shadow: inset 0 -15px 30px rgba(0, 0, 0, 0.95), 0 8px 25px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff007f;
+    box-shadow: inset 0 -10px 20px rgba(255, 0, 127, 0.15), 0 0 25px rgba(255, 0, 127, 0.4);
+}
+
+.book-spine-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #ff007f; /* Raspberry Pink Spine */
+    box-shadow: 0 0 10px #ff007f;
+}
+
+.card-top-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+    font-size: 0.8rem;
+}
+
+.book-shelf-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: #00ff88; /* Terminal Code Green */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: block;
+}
+
+.beloved-tag {
+    font-family: 'Share Tech Mono', monospace;
+    color: #ff85b3;
+    background: rgba(255, 0, 127, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 0, 127, 0.3);
+}
+
+.book-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: #d8bfd8; /* Gentle's Dandy Purple for Titles */
+    margin-bottom: 0.3rem;
+    text-shadow: 0 0 8px rgba(177, 156, 217, 0.3);
+}
+
+.book-author {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #ff85b3;
+    margin-bottom: 0.8rem;
+}
+
+.page-count {
+    font-size: 0.95rem;
+    color: #b19cd9;
+    font-weight: normal;
+}
+
+.marginalia-box {
+    background: rgba(177, 156, 217, 0.05);
+    border-left: 2px solid #b19cd9;
+    padding: 0.6rem 0.8rem;
+    margin: 0.8rem 0;
+    border-radius: 0 6px 6px 0;
+}
+
+.marginalia-text {
+    font-size: 1rem;
+    font-style: italic;
+    color: #f7f1e3;
+}
+
+.love-rating {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: #d8bfd8;
+    margin-bottom: 1rem;
+}
+
+.hearts {
+    letter-spacing: 2px;
+}
+
+.book-notes {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #f7f1e3;
+    margin-bottom: 1.4rem;
+    border-left: 2px solid #ff007f;
+    padding-left: 0.75rem;
+    font-style: italic;
+}
+
+.book-actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.status-studied {
+    background: rgba(177, 156, 217, 0.15) !important;
+    border-color: #b19cd9 !important;
+    color: #d8bfd8 !important;
+}
+
+.status-awaiting {
+    background: rgba(255, 0, 127, 0.15) !important;
+    border-color: #ff007f !important;
+    color: #ff85b3 !important;
+}
+
+.delete-btn {
+    background: rgba(20, 5, 15, 0.9);
+    border: 1px solid rgba(255, 0, 127, 0.4);
+    color: #ff85b3;
+    padding: 0.45rem 0.85rem;
+    border-radius: 4px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+    background: rgba(255, 0, 127, 0.25);
+    border-color: #ff007f;
+    box-shadow: 0 0 12px rgba(255, 0, 127, 0.5);
+}
+
+body.camera-mode {
+    background: #000000;
+}
+
+body.camera-mode header {
+    border-bottom: 3px solid #00ff88;
+    box-shadow: 0 0 40px rgba(0, 255, 136, 0.4);
+}
+
+body.camera-mode .book-card {
+    border-color: #b19cd9; /* Gentle's Purple in Camera Mode */
+    box-shadow: 0 0 35px rgba(177, 156, 217, 0.3), inset 0 0 15px rgba(255, 0, 127, 0.2);
+}
