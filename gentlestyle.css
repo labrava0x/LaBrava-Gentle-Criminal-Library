@@ -44,6 +44,15 @@ header p {
     color: #ff85b3; /* Soft Raspberry Tint */
 }
 
+.header-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    margin-top: 1.4rem;
+}
+
 #open-scribe-btn {
     font-family: 'Cinzel', serif;
     background: linear-gradient(135deg, #ff007f 0%, #b30059 100%);
@@ -61,6 +70,41 @@ header p {
 #open-scribe-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 0 30px rgba(255, 0, 127, 0.9), 0 0 10px #b19cd9;
+}
+
+#export-library-btn {
+    font-family: 'Share Tech Mono', monospace;
+    background: rgba(13, 4, 10, 0.95);
+    color: #d8bfd8;
+    border: 1px solid #b19cd9;
+    padding: 0.8rem 1.4rem;
+    font-size: 0.92rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+#export-library-btn:hover {
+    background: rgba(177, 156, 217, 0.16);
+    border-color: #ff85b3;
+    box-shadow: 0 0 18px rgba(177, 156, 217, 0.45);
+}
+
+#quirk-boost-btn {
+    font-family: 'Share Tech Mono', monospace;
+    background: rgba(0, 255, 136, 0.08);
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    padding: 0.8rem 1.3rem;
+    font-size: 0.92rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+#quirk-boost-btn:hover {
+    background: rgba(0, 255, 136, 0.2);
+    box-shadow: 0 0 18px rgba(0, 255, 136, 0.45);
 }
 
 .status-btn {
@@ -231,6 +275,127 @@ header p {
     background: rgba(255, 0, 127, 0.25);
     border-color: #ff007f;
     box-shadow: 0 0 12px rgba(255, 0, 127, 0.5);
+}
+
+/* =================================================================
+   ARCHIVE INSCRIPTION MODAL & FORM CONTROLS
+   ================================================================= */
+
+.scribe-modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    background: rgba(4, 1, 3, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 9000;
+}
+
+.scribe-modal-content {
+    width: 100%;
+    max-width: 540px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: linear-gradient(160deg, #140510 0%, #0a0308 100%);
+    color: #f7f1e3;
+    border: 1px solid #ff007f;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 0 35px rgba(255, 0, 127, 0.35), 0 18px 50px rgba(0, 0, 0, 0.9);
+}
+
+.scribe-modal-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.65rem;
+    color: #d8bfd8;
+    text-align: center;
+    margin-bottom: 1.4rem;
+    text-shadow: 0 0 12px rgba(177, 156, 217, 0.45);
+}
+
+#add-volume-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+#add-volume-form label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #00ff88;
+}
+
+#add-volume-form input,
+#add-volume-form select,
+#add-volume-form textarea {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border-radius: 6px;
+    border: 1px solid rgba(177, 156, 217, 0.45);
+    background: rgba(6, 2, 5, 0.92);
+    color: #f7f1e3;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#add-volume-form input::placeholder,
+#add-volume-form textarea::placeholder {
+    color: rgba(247, 241, 227, 0.45);
+    font-style: italic;
+}
+
+#add-volume-form input:focus,
+#add-volume-form select:focus,
+#add-volume-form textarea:focus {
+    outline: none;
+    border-color: #ff007f;
+    box-shadow: 0 0 0 3px rgba(255, 0, 127, 0.25);
+}
+
+.scribe-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1.4rem;
+}
+
+.submit-scribe-btn {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    padding: 0.65rem 1.3rem;
+    border-radius: 6px;
+    border: 1px solid #ff66b2;
+    background: linear-gradient(135deg, #ff007f 0%, #b30059 100%);
+    color: #f7f1e3;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+    transition: all 0.2s ease;
+}
+
+.submit-scribe-btn:hover {
+    box-shadow: 0 0 24px rgba(255, 0, 127, 0.75);
+}
+
+.cancel-scribe-btn {
+    font-family: 'Share Tech Mono', monospace;
+    padding: 0.65rem 1.15rem;
+    border-radius: 6px;
+    border: 1px solid rgba(177, 156, 217, 0.45);
+    background: rgba(13, 4, 10, 0.9);
+    color: #d8bfd8;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cancel-scribe-btn:hover {
+    border-color: #00ff88;
+    color: #00ff88;
 }
 
 body.camera-mode {

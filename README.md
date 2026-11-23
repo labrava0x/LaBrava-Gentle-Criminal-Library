@@ -1,60 +1,74 @@
- What started as my fourth final library project ended up being a descent in the form of heart spirals. To others it might seem unnecessary if they knew, but I could just not let this go. Every little detail matters, and the heart spirals became an even more pronounced maddening obsessision in this project, to then try to mimic Manami's eyes, gazing in adoration through the screen. 
+# Gentle's Grand Library — *LaBrava-Gentle-Criminal-Library*
 
- Another fan-art project that is for My Hero Academia, whose creator is Kōhei Horikoshi. Allow me to introduce you to the brief that made this happen, and what makes this library different from others, the unique features that made me fixated for eyes that seek out the longing for the utmost devotion possible:
- 
- 
- Architectural Overview
+An interactive, single-page archive and fan-art web application inspired by *My Hero Academia* (created by Kōhei Horikoshi), celebrating the theatrical devotion and hacker-noir synergy of Gentle Criminal and Manami Aiba (La Brava).
 
-The application is engineered around a clean, single-page modular design featuring three core files:
+What began as a fourth library build turned into a deep dive into concentric heart spirals and vector eye geometry—chasing the exact gaze of Manami looking out through the screen with her Quirk active and unshakable devotion.
 
-gentlindex.html: The semantic document anchor hosting the full-screen Quirk Threshold Portal, header controls, archive inscription modal, and responsive dynamic grid containers.
+---
 
-gentlestyle.css: The narrative styling sheet establishing the dark hacker-noir aesthetic, CRT scanlines, bespoke typography (Cinzel, Cormorant Garamond, and Share Tech Mono), and glowing crimson/plum color palettes (#060205, #1C0D15, #351B29, #D67893, #F9D3DD).
+## Architectural Overview
 
-gentlelibrary.js: The object-oriented JavaScript engine handling seed collection loading, localStorage persistence (v6), DOM rendering, dynamic card manipulation, and interactive state toggles.
+The project uses a modular single-page layout with a standalone validation layer:
 
-👁️ The Quirk Threshold Portal (La Brava’s Active Gaze)
+* **`gentlindex.html`**: Semantic document structure hosting the full-screen **Quirk Threshold Portal**, header controls, archive inscription modal, and responsive library grid container.
+* **`gentlestyle.css`**: Narrative stylesheet setting up the dark hacker-noir aesthetic, CRT scanlines, typography (`Cinzel`, `Cormorant Garamond`, and `Share Tech Mono`), and crimson, plum, raspberry, and terminal-green accents (`#060205`, `#1C0D15`, `#351B29`, `#D67893`, `#F9D3DD`, `#ff007f`, `#00ff88`).
+* **`gentlelibrary.js`**: Object-oriented engine managing the 29-volume seed archive, `localStorage` persistence (`v6`), dynamic DOM card rendering, state toggling, deletion, JSON export, and Quirk Boost interactions.
+* **`gentle.validators.js`**: Self-attaching form validation module (maintained on the `validation-form` branch) that intercepts submission in the capture phase and delivers character-voiced feedback without modifying `gentlelibrary.js`.
 
-The application entry point features a full-screen interactive SVG threshold portal representing La Brava gazing out at Gentle with her Quirk actively engaged.
+---
 
-Precise Technical Specifications & Vector Path Design:
+## 👁️ The Quirk Threshold Portal (La Brava’s Active Gaze)
 
-Eyeliner & Contours (#1C0D15): Crafted with a fierce, slanted anime contour featuring a thick upper wing that sweeps sharply upward and outward.
+The entry screen opens with a full-screen interactive SVG portal depicting La Brava's gaze as her Quirk is engaged:
 
-Sclera (#FFFFFF): Pristine eye whites providing stark contrast against the dark plum background (#060205).
+* **Eyeliner & Contours (`#1C0D15`)**: Slanted anime eye contour with a sharp upper wing sweeping upward and outward.
+* **Sclera (`#FFFFFF`)**: High-contrast eye whites set against the deep dark plum backdrop (`#060205`).
+* **Active Quirk Iris Structure (Center-Outward Progression)**:
+  * **Innermost Core Heart Rings (2 Rings)**: Twin concentric heart paths built with cubic Bézier (`C`) curves in deep plum (`#351B29`) and core shade (`#1C0D15`).
+  * **Expanding Circular Spirals**: Concentric `<circle>` elements expanding outward from `r="11"` to `r="44"`, alternating across mid-tone pink highlights (`#D67893`) and light pink base rings (`#F9D3DD`).
+  * **Outer Iris Boundary**: Solid near-black closing ring (`#1C0D15`) framing the iris against the sclera.
+* **Interactive Trigger**: Clicking anywhere on the portal or pressing `Enter` applies the `shattered` class, scaling and dissolving the portal into the library archive.
 
-Active Quirk Iris Structure (Center-Outward Progression):
+---
 
-Innermost Core Heart Rings (2 Rings): Detailed cubic bezier curves (C commands) tracing twin concentric heart loops in deep plum (#351B29) and core shade (#1C0D15).
+## 📚 The Grand Library Engine & Data Architecture
 
-Expanding Circular Spirals: Concentric SVG circles (<circle>) expanding outward from radius r="11" to r="44", shifting through mid-tone pink highlights (#D67893) and light pink base rings (#F9D3DD).
+Preloaded with a curated collection of **29 master volumes** spanning literary classics, technical/hacking manuals, and private journals:
 
-Outer Iris Boundary: A solid closing near-black ring (#1C0D15) sealing the iris before meeting the white sclera.
+* **Unified Rallying Cry**: Every card highlights the custom inscription in high-visibility terminal green (`#00FF66`):
+  > `each book, shared with love , and imperial royal ☕! I love you, Gentle! ❤️`
+* **Object-Oriented `Book` Class**: Stores unique UUIDs (via `crypto.randomUUID()` with a deterministic fallback generator), `title`, `author`, `pages`, `shelf`, `belovedBy`, `marginalia`, `loveLevel` (`❤️❤️❤️❤️❤️`), `status`, and `notes`.
+* **Enhanced Readability Notes**: La Brava's notes render in large, high-contrast hacker green (`#00FF66`) with generous line spacing.
+* **Interactive Controls & Actions**:
+  * **Status Toggling**: Switch entries between `"🎩 Gentle has studied this tome"` and `"⏳ Awaiting Gentle’s review"`.
+  * **Exile / Removal (`"Back to the Terminal"`)**: Remove volumes from the archive and persist the updated state.
+  * **Archive Inscription Modal**: Log new volumes or deeds directly into `localStorage`.
+  * **JSON Export**: Download a full backup of the archive as `gentles-grand-library-archives.json`.
+  * **Quirk Boost Trigger**: Toggle visual camera/boost styling with celebratory feedback.
 
-Interactive Trigger: Clicking anywhere on the portal or pressing the Enter key triggers a smooth CSS transition (shattered class) where the portal scales and dissolves into the terminal archive.
+---
 
-📚 The Grand Library Engine & Data Architecture
+## Running Locally & Branch Workflow
 
-The library manages a curated seed collection of 29 master volumes, literary classics, hacking manuals, and private journals.
+Start a local server from the project directory:
 
-Key Features Implemented:
+```bash
+python3 -m http.server 8000
+```
 
-Unified Rallying Cry: Every single card prominently displays the requested custom inscription in high-visibility hacker green (#00FF66):
+Then open `http://localhost:8000` in your browser.
 
-each book, shared with love , and imperial royal ☕! I love you, Gentle! ❤️
+To commit and push changes to the `validation-form` branch:
 
-Object-Oriented Book Class: Encapsulates properties including unique UUIDs (via crypto.randomUUID with fallback generation), titles, authors, page counts, love levels (❤️❤️❤️❤️❤️), read status, marginalia quotes, and La Brava's personal commentary notes.
+```bash
+git status
+git add .
+git commit -m "Update README and finalize validation-form branch"
+git push -u origin validation-form
+```
 
-Enhanced Readability Notes: La Brava’s notes are dynamically rendered in large, highly readable hacker green (#00FF66) with generous line-height for effortless viewing.
+---
 
-Dynamic Card Actions:
+## Attribution & Disclaimer
 
-Status Toggling: Switch between "🎩 Gentle has studied this tome" and "⏳ Awaiting Gentle’s review".
-
-Exile / Deletion: "Back to the Terminal" action to safely remove volumes from the archive.
-
-Archive Inscription Modal: A dramatic dark-scroll form allowing users to log new deeds and volumes into localStorage.
-
-JSON Export: Instantly export the entire library state as a .json backup file (gentles-grand-library-archives.json).
-
-Quirk Boost Trigger: Interactive button to supercharge the interface with celebratory love alerts.
+*My Hero Academia* and its characters—including Manami Aiba (La Brava) and Gentle Criminal—belong to **Kōhei Horikoshi** and their respective rights holders. This repository is a non-commercial fan-art and coding project.
